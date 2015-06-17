@@ -79,6 +79,51 @@
     };
 
     //-----custom functions-----
+    MapsLib.prototype.initializeDateSlider = function(minDate, maxDate, startDate, endDate, stepType, step) {
+    var self = this;
+    var interval = self.sliderInterval(stepType);
+
+    $('#minDate').html(minDate.format('MMM YYYY'));
+    $('#maxDate').html(maxDate.format('MMM YYYY'));
+
+    $('#startDate').html(startDate.format('YYYY/MM/DD'));
+    $('#endDate').html(endDate.format('YYYY/MM/DD'));
+
+    $('#date-range').slider({
+      range: true,
+      step: step,
+      values: [ 
+          Math.floor((startDate.valueOf() - minDate.valueOf()) / interval), 
+          Math.floor((endDate.valueOf() - minDate.valueOf()) / interval) 
+      ],
+      max: Math.floor((maxDate.valueOf() - minDate.valueOf()) / interval),
+      slide: function(event, ui) {
+          $('#startDate').html(minDate.clone().add(stepType, ui.values[0]).format('L'));
+          $('#endDate').html(minDate.clone().add(stepType, ui.values[1]).format('L'));
+      },
+      stop: function(event, ui) {
+         self.doSearch();
+        }
+    });
+  }
+
+  MapsLib.prototype.sliderInterval = function(interval) {
+    if (interval == "years")
+      return 365 * 24 * 3600 * 1000;
+    if (interval == "quarters")
+      return 3 * 30.4 * 24 * 3600 * 1000;
+    if (interval == "months") //this is very hacky. months have different day counts, so our point interval is the average - 30.4
+      return 30.4 * 24 * 3600 * 1000;
+    if (interval == "weeks")
+      return 7 * 24 * 3600 * 1000;
+    if (interval == "days")
+      return 24 * 3600 * 1000;
+    if (interval == "hours")
+      return 3600 * 1000;
+    else
+      return 1;
+  }
+    
     //-----end of custom functions-----
 
     MapsLib.prototype.submitSearch = function (whereClause, map) {
