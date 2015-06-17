@@ -71,6 +71,15 @@
         $("#result_box").hide();
 
         //-----custom initializers-----
+        //ranges for our slider
+    var minDate = moment("Jan 1 2010"); // Jan 1st 2010
+    var maxDate = moment(); //now
+
+    //starting values
+    var startDate = moment().subtract('months', 3); //past 3 months
+    var endDate = moment(); //now
+
+    self.initializeDateSlider(minDate, maxDate, startDate, endDate, "days", 7);
         //-----end of custom initializers-----
 
         //run the default search when page loads
