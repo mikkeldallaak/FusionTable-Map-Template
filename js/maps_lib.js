@@ -217,6 +217,8 @@
         self.whereClause = self.locationColumn + " not equal to ''";
         
         //-----custom filters-----
+        self.whereClause += " AND 'Startdato' >= '" + $('#startDate').html() + "'";
+self.whereClause += " AND 'Slutdato' <= '" + $('#endDate').html() + "'";
         //-----end of custom filters-----
 
         self.getgeoCondition(address, function (geoCondition) {
