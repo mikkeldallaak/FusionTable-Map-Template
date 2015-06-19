@@ -218,7 +218,7 @@
         
         //-----custom filters-----
         self.whereClause += " AND 'Startdato' >= '" + $('#startDate').html() + "'";
-self.whereClause += " AND 'Slutdato' <= '" + $('#endDate').html() + "'";
+self.whereClause += " AND 'Startdato' <= '" + $('#endDate').html() + "'";
         //-----end of custom filters-----
 
         self.getgeoCondition(address, function (geoCondition) {
