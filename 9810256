@@ -1,0 +1,105 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2083266,
+          56.1574118,
+          8
+        ]
+      },
+      "properties": {
+        "name": "START",
+        "styleUrl": "#StartIconStyle",
+        "styleHash": "-188ee4d7"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1999044,
+          56.1526135,
+          17
+        ]
+      },
+      "properties": {
+        "name": "FINISH",
+        "styleUrl": "#FinishIconStyle",
+        "styleHash": "7876d3e0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            10.2083266,
+            56.1574118,
+            8
+          ],
+          [
+            10.2096248,
+            56.1568979,
+            10
+          ],
+          [
+            10.2083802,
+            56.1559718,
+            10
+          ],
+          [
+            10.2063847,
+            56.1541493,
+            15
+          ],
+          [
+            10.2052474,
+            56.1530617,
+            18
+          ],
+          [
+            10.2046788,
+            56.1508028,
+            14
+          ],
+          [
+            10.2033269,
+            56.1505757,
+            15
+          ],
+          [
+            10.2039707,
+            56.1530916,
+            18
+          ],
+          [
+            10.2024043,
+            56.1531872,
+            17
+          ],
+          [
+            10.2017283,
+            56.152751,
+            17
+          ],
+          [
+            10.1999044,
+            56.1526135,
+            17
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Fly-Over Tour",
+        "styleUrl": "#RoutePath",
+        "styleHash": "627c66c6"
+      }
+    }
+  ]
+}
